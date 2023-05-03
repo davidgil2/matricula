@@ -29,9 +29,7 @@ public class OfertaService {
     public OfertaDto obtenerPorId(Integer idOferta) {
 
         OfertaModel oferta = ofertaRepository.findById(idOferta).get();
-        List<MateriaOfertaModel> materiasIdList = materiaOfertaRepository.findByOfertasId(oferta.getId());
-        List<MateriaDto> materiasList = materiasIdList.stream()
-                .map(materiaOferta -> materiaRepository.findById(materiaOferta.getMateriasId()).get())
+        List<MateriaDto> materiasList = oferta.getMaterias().stream()
                 .map(Factories::materiaFactory)
                 .collect(Collectors.toList());
 
