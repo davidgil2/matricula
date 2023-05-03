@@ -1,8 +1,13 @@
 package com.example.demo.models;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -20,6 +25,11 @@ public class OfertaModel {
     private String fechaCreacion;
     @Column(name = "UpdatedOn")
     private String fechaActualizacion;
+    @ManyToMany
+    @JoinTable(name = "materiaoferta", joinColumns = {
+            @JoinColumn(name = "OfertasId", referencedColumnName = "id") }, inverseJoinColumns = {
+                    @JoinColumn(name = "MateriasId", referencedColumnName = "id") })
+    private List<MateriaModel> materias;
 
     public Integer getId() {
         return id;
@@ -60,4 +70,14 @@ public class OfertaModel {
     public void setFechaActualizacion(String fechaActualizacion) {
         this.fechaActualizacion = fechaActualizacion;
     }
+
+    public List<MateriaModel> getMaterias() {
+        return materias;
+    }
+
+    public void setMaterias(List<MateriaModel> materias) {
+        this.materias = materias;
+    }
+
+    
 }

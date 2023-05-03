@@ -1,5 +1,7 @@
 package com.example.demo.models;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -20,6 +22,8 @@ public class MateriaModel {
     private String fechaActualizacion;
     @Column(name = "Descripcion")
     private String descripcion;
+    @ManyToMany(mappedBy = "materias")
+    private List<OfertaModel> ofertas;
 
     public Integer getId() {
         return id;
@@ -68,5 +72,14 @@ public class MateriaModel {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
+
+    public List<OfertaModel> getOfertas() {
+        return ofertas;
+    }
+
+    public void setOfertas(List<OfertaModel> ofertas) {
+        this.ofertas = ofertas;
+    }
+    
 
 }
