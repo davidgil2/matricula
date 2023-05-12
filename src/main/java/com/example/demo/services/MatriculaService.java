@@ -14,7 +14,7 @@ public class MatriculaService {
     HorarioEstRepository horarioEstRepository;
 
     @Autowired
-    MateriaRepository materiaRepository;
+    MateriaRepository matriculaRepositoryRepository;
 
     //public void transformarMateria(MateriaModel materia){
 

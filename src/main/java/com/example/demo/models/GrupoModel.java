@@ -1,5 +1,7 @@
 package com.example.demo.models;
 
+import java.util.List;
+
 import javax.persistence.*;
 
 @Entity
@@ -24,6 +26,10 @@ public class GrupoModel {
     private String aula;
     @Column(name = "Horario")
     private String horario;
+
+    @ManyToMany(mappedBy = "grupos")
+    private List<MatriculaModel> matriculas;
+
     
     public Integer getId() {
         return id;

@@ -3,6 +3,7 @@ package com.example.demo.controllers;
 import java.util.ArrayList;
 
 import com.example.demo.models.MateriaModel;
+import com.example.demo.models.MatriculaModel;
 import com.example.demo.services.MateriaService;
 import com.example.demo.services.MatriculaService;
 
@@ -20,11 +21,13 @@ public class MatriculaController {
     @Autowired
     MatriculaService matriculaService;
 
-    //Cambiar para que solo muestre las que tienen cupos
-    //@GetMapping("/materia")
-    //public ArrayList<MateriaModel> obtenerMateriaPorCodigo(@RequestParam("codigo") Integer codigo){
-      //  return this.materiaService.obtenerPorCodigo(codigo);
-    //}
+
+
+    // //Cambiar para que solo muestre las que tienen cupos
+    // @GetMapping("/matricula")
+    // public MatriculaModel obtenerMateriaPorCodigo(@RequestParam("codigo") Integer codigo){
+    //    return this.materiaService.obtenerPorCodigo(codigo);
+    // }
 
     //Al agregar se debe guardar con un cupo menos
     //@PostMapping()
