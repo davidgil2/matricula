@@ -1,8 +1,11 @@
 package com.example.demo.models;
 
+import java.util.List;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -22,6 +25,8 @@ public class EstudianteModel {
     private Integer nroPensum;
     @Column(name = "NroSemestre")
     private Integer nroSemestre;
+    @OneToMany
+    List<MatriculaModel> matriculas;
 
     public Integer getId() {
         return id;
